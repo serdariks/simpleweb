@@ -1,9 +1,7 @@
 FROM node:alpine as builder
+EXPOSE 80
 WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
-
-FROM nginx
-EXPOSE 80
-COPY --from=builder /app /usr/share/nginx/html
+CMD ["npm", "start"]
