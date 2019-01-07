@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "webpack": "^4.28.3"
   },
   "scripts": {
-    "start": "node index.js"
-  }
+    "start": "node index.js"    
+  }  
 }
