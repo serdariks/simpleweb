@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run serdariks/simpleweb echo hi there
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "simple-web"
+  env: "SimpleWeb-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-542383882783"
+  bucket_path: "simple-web"
+  on:
+    branc: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
