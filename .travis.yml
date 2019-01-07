@@ -3,3 +3,5 @@ services:
   - docker
 before-install:
   - docker build -t serdariks/simpleweb:latest .
+script:
+  - docker run serdariks/simpleweb echo hi there
