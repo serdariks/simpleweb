@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t serdariks/simpleweb:latest .
+  - docker build -t serdariks/simpleweb:latest -f Dockerfile.dev .
 
 script:
   - docker run serdariks/simpleweb echo hi there
@@ -16,7 +16,7 @@ deploy:
   bucket_name: "elasticbeanstalk-eu-west-2-542383882783"
   bucket_path: "simple-web"
   on:
-    branc: master
+    branch: master
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
