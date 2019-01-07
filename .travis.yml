@@ -1,7 +1,10 @@
 sudo: required
+
 services:
   - docker
-before-install:
+
+before_install:
   - docker build -t serdariks/simpleweb:latest .
+
 script:
   - docker run serdariks/simpleweb echo hi there
