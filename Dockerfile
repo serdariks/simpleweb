@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:alpine
 EXPOSE 80
 WORKDIR /app
 COPY package.json .
